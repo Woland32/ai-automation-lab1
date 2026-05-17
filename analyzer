@@ -1,0 +1,30 @@
+# Raw data: a list of dictionaries simulating an API response
+reviews = [
+    {"user": "Alice", "text": "Great product, fast delivery, highly recommend!"},
+    {"user": "John", "text": "Thanks"},
+    {"user": "Bot_999", "text": "BUY CRYPTO AT THIS LINK!!! Spam"},
+    {"user": "Maria", "text": "Average quality, but standard functionality for this price."}
+]
+
+# Function to check if the review is valid
+def is_valid_review(review_text):
+    # Rule 1: Text must be at least 10 characters long
+    # Rule 2: Text must not contain the word "Spam"
+    if len(review_text) < 10 or "Spam" in review_text:
+        return False
+    return True
+
+print("--- START REVIEW PROCESSING ---")
+
+# Loop through each review in the list
+for review in reviews:
+    author = review["user"]
+    content = review["text"]
+    
+    # Call the validation function
+    if is_valid_review(content):
+        print(f"APPROVED from {author}: '{content}' (Length: {len(content)} chars)")
+    else:
+        print(f"REJECTED (Spam/Too short) from {author}")
+
+print("--- PROCESSING COMPLETED ---")
