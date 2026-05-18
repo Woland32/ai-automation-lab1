@@ -3,14 +3,18 @@ reviews = [
     {"user": "Alice", "text": "Great product, fast delivery, highly recommend!"},
     {"user": "John", "text": "Thanks"},
     {"user": "Bot_999", "text": "BUY CRYPTO AT THIS LINK!!! Spam"},
-    {"user": "Maria", "text": "Average quality, but standard functionality for this price."}
+    {"user": "Maria", "text": "Average quality, but standard functionality for this price."},
+    {"user": "Anonymous", "text": "Beautiful product!"}
 ]
+
+spam_indicators = ["Spam", "!!"]
 
 # Function to check if the review is valid
 def is_valid_review(review_text):
     # Rule 1: Text must be at least 10 characters long
     # Rule 2: Text must not contain the word "Spam"
-    if len(review_text) < 10 or "Spam" in review_text:
+    # Rule 3: Text must not contain "!!"
+    if len(review_text) < 10 or any(indicator in review_text for indicator in spam_indicators):
         return False
     return True
 
