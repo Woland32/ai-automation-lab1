@@ -1,0 +1,29 @@
+'''
+def get_speed_statistic(test_results):
+    # if not test_results:
+    #     return test_results[0, 0, 0]
+    for i in test_results:
+        if i[0] > i[1] and i[0]> i[2]:
+            return test_results[0] == i[0]
+        elif i[1] > i[0] and i[1]> i[2]:
+            return test_results[0] == i[1]
+        else: 
+            return test_results[0] == i[2]
+
+print(get_speed_statistic([[1, 2, 3]]))
+
+
+from math import floor
+
+
+def get_speed_statistic(test_results):
+    if not test_results:
+        return [0, 0, 0]
+    for speed in test_results:
+        test_results[0]= min(test_results)
+        test_results[-1] = max(test_results)
+        test_results[1] = floor(sum(test_results) / len(test_results))
+        return test_results
+        
+    print(get_speed_statistic([2, 4, 1]))
+'''

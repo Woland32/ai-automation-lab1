@@ -1,0 +1,67 @@
+'''
+film_rating = "G"
+
+#  Write code here
+if film_rating == "G":
+    print("Suitable for all ages.")
+elif film_rating == "PG":
+    print("Parental guidance suggested.")
+else: film_rating == "PG-13"
+    print("Suitable for children aged 13 and older.")
+
+
+def temperature(value):
+    if value > 50:
+        return "Hot"
+    elif value >= 20 and value <= 50:
+        return "Warm"
+    else: 
+        return "Cold"
+
+def get_lists_sum(ls1, ls2):
+    
+    return sum(ls1 + ls2)
+
+
+print(get_lists_sum([1, 2, 3], [4, 5, 6]))
+
+
+def remove_vowels(document):
+    vowels = "aeiouyAEIOUY"
+    result_string = ""
+    for char in document:
+        if char not in vowels:
+            result_string += char
+    return result_string
+
+print(remove_vowels("This is a test document."))
+
+def make_stickers(details_count, robot_part):
+    stickers = []
+    if details_count == 0:
+        return stickers
+    else:
+        for n in range(1, details_count + 1):
+            stickers.append(f"{robot_part} detail #{n}")
+    return stickers
+
+    
+
+import math
+
+
+def get_plan(current_production, months, percent):
+    plan_per_mounth = math.floor([])
+    while len(plan_per_mounth) < months:
+        result = current_production + (current_production * percent) / 100 #130
+        plan_per_mounth.append(result)
+        current_production = result
+    return 
+        
+
+print(get_plan(100, 4, 30))
+        #current production - 100 / 130 / 
+        # months - 4
+        # percent 30
+        '''
+
